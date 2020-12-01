@@ -151,6 +151,49 @@ class HomePage extends StatelessWidget {
               Text(
                 'here are todays\nrecommended actions for you',
                 style: TextStyle(color: Colors.grey[700]),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                    color: Color(0xFFffefce),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                          color: shadowColor,
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 16.0,
+                          spreadRadius: 6)
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'claim your cashback now!',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                        'make your first payment now\nand win assurd cashback'),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    FlatButton(
+                      shape: StadiumBorder(),
+                      textColor: Colors.white,
+                      color: Colors.black,
+                      child: Text('Pay now'),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
               )
             ],
           ),
