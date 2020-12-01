@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'constants.dart';
 
 void main() {
@@ -22,140 +21,168 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: gPrimaryColor,
-      appBar: AppBar(
-        toolbarHeight: 120,
         backgroundColor: gPrimaryColor,
-        leadingWidth: 100,
-        leading: Container(
-          margin: EdgeInsets.symmetric(vertical: 20),
+        appBar: AppBar(
+          toolbarHeight: 120,
+          backgroundColor: gPrimaryColor,
+          leadingWidth: 100,
+          leading: Container(
+            margin: EdgeInsets.symmetric(vertical: 20),
+            child: Column(
+              children: [
+                Container(
+                  height: 45,
+                  width: 45,
+                  child: Container(
+                      padding: EdgeInsets.all(5),
+                      child: Image(image: AssetImage("images/picture.png"))),
+                  decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      boxShadow: [gBoxShadow],
+                      borderRadius: BorderRadius.circular(50)),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  'profile',
+                  style: TextStyle(color: Colors.white, fontSize: 12),
+                )
+              ],
+            ),
+          ),
+          actions: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: 40,
+                        width: 40,
+                        padding: EdgeInsets.all(4),
+                        child: Image(image: AssetImage("images/picture.png")),
+                        decoration: storyContainer,
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'stories',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 40,
+                        width: 40,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.notifications,
+                            color: iconsColors,
+                          ),
+                        ),
+                        decoration: nMboxInvert,
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'notifications',
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 40,
+                        width: 40,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.category_sharp,
+                            color: iconsColors,
+                          ),
+                        ),
+                        decoration: nMboxInvert,
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'control',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+        body: Container(
+          width: double.infinity,
+          color: bodyColors,
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 50,
-                width: 50,
-                child: Container(
-                    padding: EdgeInsets.all(5),
-                    child: Image(image: AssetImage("images/picture.png"))),
-                decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                    boxShadow: [gBoxShadow],
-                    borderRadius: BorderRadius.circular(50)),
+              Text(
+                'hello, ANISH',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
               ),
               SizedBox(
-                height: 8,
+                height: 10,
               ),
               Text(
-                'profile',
-                style: TextStyle(color: Colors.white60, fontSize: 12),
+                'here are todays\nrecommended actions for you',
+                style: TextStyle(color: Colors.grey[700]),
               )
             ],
           ),
         ),
-        actions: [
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      height: 45,
-                      width: 45,
-                      padding: EdgeInsets.all(4),
-                      child: Image(image: AssetImage("images/picture.png")),
-                      decoration: storyContainer,
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'stories',
-                      style: TextStyle(color: Colors.white60),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 45,
-                      width: 45,
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.notifications,
-                          color: iconsColors,
-                        ),
-                      ),
-                      decoration: nMboxInvert,
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'notifications',
-                      style: TextStyle(color: Colors.white60, fontSize: 12),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 45,
-                      width: 45,
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.category_sharp,
-                          color: iconsColors,
-                        ),
-                      ),
-                      decoration: nMboxInvert,
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'controls',
-                      style: TextStyle(color: Colors.white60),
-                    )
-                  ],
-                ),
-              ],
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: bottomColors,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              backgroundColor: Color(0xFF1b1f22),
+              icon: Icon(Icons.home_filled),
+              label: 'home',
             ),
-          )
-        ],
-      ),
-      body: Container(
-        width: double.infinity,
-        color: bodyColors,
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'hello, ANISH',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.credit_card),
+              label: 'cards',
             ),
-            SizedBox(
-              height: 10,
+            BottomNavigationBarItem(
+              icon: Icon(Icons.money),
+              label: 'money',
             ),
-            Text(
-              'here are todays\nrecommended actions for you',
-              style: TextStyle(color: Colors.grey[700]),
-            )
+            BottomNavigationBarItem(
+              icon: Icon(Icons.store),
+              label: 'club',
+            ),
           ],
-        ),
-      ),
-    );
+          // currentIndex: ,
+          selectedItemColor: iconsColors,
+          unselectedItemColor: unselct,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          selectedFontSize: 11,
+          //  onTap: ,
+        ));
   }
 }
