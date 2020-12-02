@@ -131,71 +131,201 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
-        body: Container(
-          width: double.infinity,
-          color: bodyColors,
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'hello, ANISH',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'here are todays\nrecommended actions for you',
-                style: TextStyle(color: Colors.grey[700]),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-                width: double.infinity,
-                height: 200,
-                decoration: BoxDecoration(
-                    color: Color(0xFFffefce),
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                          color: shadowColor,
-                          offset: Offset(1.0, 1.0),
-                          blurRadius: 16.0,
-                          spreadRadius: 6)
-                    ]),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'claim your cashback now!',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                        'make your first payment now\nand win assurd cashback'),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    FlatButton(
-                      shape: StadiumBorder(),
-                      textColor: Colors.white,
-                      color: Colors.black,
-                      child: Text('Pay now'),
-                      onPressed: () {},
-                    )
-                  ],
+        body: SingleChildScrollView(
+          physics:
+              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          scrollDirection: Axis.vertical,
+          child: Container(
+            width: double.infinity,
+            color: bodyColors,
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'hello, ANISH',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
                 ),
-              )
-            ],
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'here are todays\nrecommended actions for you',
+                  style: TextStyle(color: Colors.grey[700]),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 30, left: 20),
+                  width: double.infinity,
+                  height: 180,
+                  decoration: BoxDecoration(
+                      color: Color(0xFFffefce),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: shadowColor,
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 16.0,
+                            spreadRadius: 6)
+                      ]),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'claim your cashback now!',
+                        style: TextStyle(fontWeight: FontWeight.w700),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                          'make your first payment now\nand win assurd cashback'),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      FlatButton(
+                        shape: StadiumBorder(),
+                        textColor: Colors.white,
+                        color: Colors.black,
+                        child: Text('Pay now'),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 30, left: 20),
+                  width: double.infinity,
+                  height: 180,
+                  decoration: BoxDecoration(
+                      color: Color(0xFFe2e8f3),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: shadowColor,
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 16.0,
+                            spreadRadius: 6)
+                      ]),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'clear your upcoming bill to earn\ncoins',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 15),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            child: Container(
+                                padding: EdgeInsets.all(5),
+                                child: Image(
+                                    image: AssetImage("images/hdfc.png"))),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: [gBoxShadow],
+                                borderRadius: BorderRadius.circular(5)),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            children: [
+                              Text('HDFC BANK'),
+                              Text('XXXX 1234'),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 80,
+                          ),
+                          Text('38844'),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 50, left: 60),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'DUE IN 10 DAYS',
+                              style: TextStyle(
+                                  color: Colors.red[700],
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            FlatButton(
+                              shape: StadiumBorder(),
+                              textColor: Colors.white,
+                              color: Colors.black,
+                              child: Text('Pay now'),
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 30, left: 20),
+                  width: double.infinity,
+                  height: 290,
+                  decoration: BoxDecoration(
+                      color: Color(0xFFffccbc),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: shadowColor,
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 16.0,
+                            spreadRadius: 6)
+                      ]),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'claim your cashback now!',
+                        style: TextStyle(fontWeight: FontWeight.w700),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                          'make your first payment now\nand win assurd cashback'),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      FlatButton(
+                        shape: StadiumBorder(),
+                        textColor: Colors.white,
+                        color: Colors.black,
+                        child: Text('Pay now'),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
