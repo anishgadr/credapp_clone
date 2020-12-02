@@ -63,8 +63,11 @@ class HomePage extends StatelessWidget {
                       Container(
                         height: 40,
                         width: 40,
-                        padding: EdgeInsets.all(4),
-                        child: Image(image: AssetImage("images/picture.png")),
+                        padding: EdgeInsets.all(1),
+                        child: Image(
+                          image: AssetImage("images/story.png"),
+                          fit: BoxFit.cover,
+                        ),
                         decoration: storyContainer,
                       ),
                       SizedBox(
@@ -247,25 +250,35 @@ class HomePage extends StatelessWidget {
                           ),
                           Column(
                             children: [
-                              Text('HDFC BANK'),
+                              Text(
+                                'HDFC Bank',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text('XXXX 1234'),
                             ],
                           ),
                           SizedBox(
                             width: 80,
                           ),
-                          Text('38844'),
+                          Text('₹38,844'),
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(right: 50, left: 60),
+                        margin: EdgeInsets.only(right: 40, left: 60),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'DUE IN 10 DAYS',
                               style: TextStyle(
-                                  color: Colors.red[700],
+                                  color: Colors.red[800],
+                                  fontSize: 12,
+                                  letterSpacing: 2,
                                   fontWeight: FontWeight.w700),
                             ),
                             FlatButton(
